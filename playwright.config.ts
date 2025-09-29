@@ -31,7 +31,7 @@ export default defineConfig({
     baseURL: 'https://www.albamon.com/',
     storageState: 'apple-login.json',
     headless: false,
-    viewport: { width: 1920, height: 1280 },
+    // viewport: { width: 1920, height: 1080 },
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -44,7 +44,12 @@ export default defineConfig({
   projects: [
     {
       name: 'chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: { ...
+        devices['Desktop Chrome'], 
+        channel: 'chrome',
+        viewport: { width: 1920, height: 1080 }
+       },
+      
     },
 
     // {
